@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import SideNavigation from "@/src/components/side-navigation";
+import SideNavigation from "../components/side-navigation";
 
 export default function Home() {
     const sections = [
