@@ -3,15 +3,15 @@
 import type React from "react";
 
 import { useState } from "react";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Label } from "../components/ui/label";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Textarea } from "../../components/ui/textarea";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card";
+import { Label } from "../../components/ui/label";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/src/hooks/use-toast";
 
-export default function Contact() {
+export default function ContactPage() {
     const { toast } = useToast();
     const [formData, setFormData] = useState({
         name: "",

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { Button } from "../components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import SideNavigation from "../components/side-navigation";
+import SideNavigation from "@/src/components/scroll-snap-sections";
 
 export default function Home() {
     const sections = [
@@ -28,13 +29,13 @@ export default function Home() {
                                         </p>
                                     </div>
                                     <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                                        <Link to="/projects">
+                                        <Link href="/projects">
                                             <Button className="inline-flex h-10 items-center justify-center">
                                                 View My Work
                                                 <ArrowRight className="ml-2 h-4 w-4" />
                                             </Button>
                                         </Link>
-                                        <Link to="/contact">
+                                        <Link href="/contact">
                                             <Button
                                                 variant="outline"
                                                 className="inline-flex h-10 items-center justify-center bg-transparent">
@@ -43,32 +44,35 @@ export default function Home() {
                                         </Link>
                                     </div>
                                     <div className="flex gap-4">
-                                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                                        <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
                                             <Button variant="ghost" size="icon">
                                                 <Github className="h-5 w-5" />
                                                 <span className="sr-only">GitHub</span>
                                             </Button>
-                                        </a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                        </Link>
+                                        <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                                             <Button variant="ghost" size="icon">
                                                 <Linkedin className="h-5 w-5" />
                                                 <span className="sr-only">LinkedIn</span>
                                             </Button>
-                                        </a>
-                                        <a href="mailto:hello@example.com">
+                                        </Link>
+                                        <Link href="mailto:hello@example.com">
                                             <Button variant="ghost" size="icon">
                                                 <Mail className="h-5 w-5" />
                                                 <span className="sr-only">Email</span>
                                             </Button>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center">
                                     <div className="relative aspect-square overflow-hidden rounded-full border">
-                                        <img
-                                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face"
+                                        <Image
+                                            src="/placeholder.svg?height=600&width=600"
                                             alt="Profile"
-                                            className="w-full h-full object-cover"
+                                            width={600}
+                                            height={600}
+                                            className="object-cover"
+                                            priority
                                         />
                                     </div>
                                 </div>
@@ -89,12 +93,14 @@ export default function Home() {
                             </div>
                             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                                 {featuredProjects.map((project) => (
-                                    <Link key={project.id} to={`/projects/${project.id}`}>
+                                    <Link key={project.id} href={`/projects#${project.id}`}>
                                         <div className="group relative overflow-hidden rounded-lg border">
-                                            <img
+                                            <Image
                                                 src={project.image || "/placeholder.svg"}
                                                 alt={project.title}
-                                                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                                                width={600}
+                                                height={400}
+                                                className="object-cover transition-transform duration-300 group-hover:scale-105"
                                             />
                                             <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
                                                 <div className="text-center text-white p-4">
@@ -107,7 +113,7 @@ export default function Home() {
                                 ))}
                             </div>
                             <div className="flex justify-center">
-                                <Link to="/projects">
+                                <Link href="/projects">
                                     <Button
                                         variant="outline"
                                         className="inline-flex h-10 items-center justify-center bg-transparent">
@@ -134,7 +140,7 @@ export default function Home() {
                                         key={skill.name}
                                         className="flex flex-col items-center space-y-2 rounded-lg border p-4">
                                         <div className="rounded-full bg-muted p-2">
-                                            <skill.icon />
+                                            <skill.icon className="h-6 w-6" />
                                         </div>
                                         <div className="text-center">
                                             <h3 className="font-medium">{skill.name}</h3>
@@ -153,35 +159,35 @@ export default function Home() {
 // Sample data
 const featuredProjects = [
     {
-        id: "ecommerce-platform",
+        id: "project1",
         title: "E-commerce Platform",
         description: "A full-stack e-commerce solution with payment integration",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+        image: "/placeholder.svg?height=400&width=600",
     },
     {
-        id: "portfolio-website",
+        id: "project2",
         title: "Portfolio Website",
-        description: "A responsive portfolio website built with React",
-        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+        description: "A responsive portfolio website built with Next.js",
+        image: "/placeholder.svg?height=400&width=600",
     },
     {
-        id: "task-management-app",
-        title: "Task Management App",
+        id: "project3",
+        title: "Mobile App",
         description: "A cross-platform mobile application for task management",
-        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+        image: "/placeholder.svg?height=400&width=600",
     },
     {
-        id: "analytics-dashboard",
-        title: "Analytics Dashboard",
+        id: "project4",
+        title: "Dashboard UI",
         description: "An admin dashboard with data visualization",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        image: "/placeholder.svg?height=400&width=600",
     },
 ];
 
 // Sample skills data
 const skills = [
     { name: "React", icon: () => <span className="text-blue-500">⚛️</span> },
-    { name: "Vite", icon: () => <span className="text-purple-500">⚡</span> },
+    { name: "Next.js", icon: () => <span>▲</span> },
     { name: "TypeScript", icon: () => <span className="text-blue-600">TS</span> },
     { name: "Node.js", icon: () => <span className="text-green-500">🟢</span> },
     { name: "Tailwind CSS", icon: () => <span className="text-cyan-500">🌊</span> },

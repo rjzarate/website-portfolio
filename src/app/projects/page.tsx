@@ -3,10 +3,10 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { Input } from "../../components/ui/input";
 import { ExternalLink, Github, Search } from "lucide-react";
 
 export default function ProjectsPage() {
@@ -181,9 +181,9 @@ const projects = [
         ],
     },
     {
-        id: "portfolio-website",
-        title: "Portfolio Website",
-        shortDescription: "A responsive portfolio website",
+        id: "portfolio-website-1",
+        title: "Portfolio Website 1",
+        shortDescription: "dupe test",
         description:
             "A responsive portfolio website built with Next.js and Tailwind CSS to showcase my work and skills.",
         image: "/placeholder.svg?height=400&width=600",

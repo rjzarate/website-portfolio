@@ -1,8 +1,9 @@
 "use client";
 
 import type React from "react";
+
 import { useState, useEffect, useRef } from "react";
-import { Button } from "../components/ui/button";
+import { Button } from "./ui/button";
 
 interface Section {
     id: string;

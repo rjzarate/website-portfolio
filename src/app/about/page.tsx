@@ -1,10 +1,12 @@
-import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
 import { Download } from "lucide-react";
-import SideNavigation from "../components/side-navigation";
+import SideNavigation from "@/src/components/scroll-snap-sections";
 
-export default function About() {
+export default function AboutPage() {
     const sections = [
         { id: "about", label: "About" },
         { id: "experience", label: "Experience" },
@@ -36,8 +38,8 @@ export default function About() {
                                             With over 5 years of experience in the industry, I've worked on a variety of
                                             projects ranging from small business websites to large-scale enterprise
                                             applications. My expertise includes front-end development with React and
-                                            Vite, back-end development with Node.js and Express, and database management
-                                            with MongoDB and PostgreSQL.
+                                            Next.js, back-end development with Node.js and Express, and database
+                                            management with MongoDB and PostgreSQL.
                                         </p>
                                         <p>
                                             When I'm not coding, you can find me hiking in the mountains, reading
@@ -45,20 +47,22 @@ export default function About() {
                                         </p>
                                     </div>
                                     <div>
-                                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                                        <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                                             <Button className="gap-2">
                                                 <Download className="h-4 w-4" />
                                                 Download Resume
                                             </Button>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center">
                                     <div className="relative aspect-square overflow-hidden rounded-xl border">
-                                        <img
-                                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face"
+                                        <Image
+                                            src="/placeholder.svg?height=600&width=600"
                                             alt="Profile"
-                                            className="w-full h-full object-cover"
+                                            width={600}
+                                            height={600}
+                                            className="object-cover"
                                         />
                                     </div>
                                 </div>

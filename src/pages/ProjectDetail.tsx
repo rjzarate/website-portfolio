@@ -1,10 +1,10 @@
 "use client";
 
 import { useParams, Link, Navigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "../components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Separator } from "../components/ui/separator";
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Target } from "lucide-react";
 import SideNavigation from "../components/side-navigation";
 import { projects } from "../data/projects";
