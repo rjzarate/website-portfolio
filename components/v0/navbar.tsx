@@ -7,6 +7,7 @@ import { Button } from "@/components/v0/ui/button";
 import { ModeToggle } from "@/components/v0/mode-toggle";
 import { Menu, X } from "lucide-react";
 import { useMobile } from "@/hooks/use-mobile";
+import { name } from "@/lib/constants";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -34,9 +35,10 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600" />
             <div className="container mx-auto flex h-16 items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold ml-2">
-                    <span>John Doe</span>
+                    <span>{name}</span>
                 </Link>
 
                 {/* Mobile menu button */}

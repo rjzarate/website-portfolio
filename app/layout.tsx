@@ -6,11 +6,13 @@ import Navbar from "@/components/v0/navbar";
 import Footer from "@/components/v0/footer";
 import { Toaster } from "@/components/v0/ui/toaster";
 
+import { name } from "@/lib/constants";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "John Doe | Portfolio",
-    description: "Personal portfolio website of John Doe, a full-stack developer",
+    title: name + " | Portfolio",
+    description: "Personal portfolio website of " + name + ", a full-stack developer",
     generator: "v0.dev",
 };
 

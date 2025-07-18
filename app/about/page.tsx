@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/v0/ui/badge";
 import { Download } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
+import { name } from "@/lib/constants";
 
 export default function AboutPage() {
     const sections = [
@@ -30,9 +31,9 @@ export default function AboutPage() {
                                     </div>
                                     <div className="space-y-4">
                                         <p>
-                                            Hello! I'm John Doe, a full-stack developer based in San Francisco, CA. I
-                                            have a passion for building web applications that are not only functional
-                                            but also provide an exceptional user experience.
+                                            Hello! I'm {name}, a full-stack developer based in San Francisco, CA. I have
+                                            a passion for building web applications that are not only functional but
+                                            also provide an exceptional user experience.
                                         </p>
                                         <p>
                                             With over 5 years of experience in the industry, I've worked on a variety of

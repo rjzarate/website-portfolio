@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/v0/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
+import { links, name } from "@/lib/constants";
 
 export default function Home() {
     const sections = [
@@ -21,7 +22,7 @@ export default function Home() {
                                 <div className="flex flex-col justify-center space-y-4">
                                     <div className="space-y-2">
                                         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                                            Hi, I'm <span className="text-primary">John Doe</span>
+                                            Hi, I'm <span className="text-primary">{name}</span>
                                         </h1>
                                         <p className="max-w-[600px] text-muted-foreground md:text-xl">
                                             I'm a full-stack developer with a passion for creating beautiful,
@@ -44,19 +45,19 @@ export default function Home() {
                                         </Link>
                                     </div>
                                     <div className="flex gap-4">
-                                        <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+                                        <Link href={links.github} target="_blank" rel="noopener noreferrer">
                                             <Button variant="ghost" size="icon">
                                                 <Github className="h-5 w-5" />
                                                 <span className="sr-only">GitHub</span>
                                             </Button>
                                         </Link>
-                                        <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                        <Link href={links.linkedin} target="_blank" rel="noopener noreferrer">
                                             <Button variant="ghost" size="icon">
                                                 <Linkedin className="h-5 w-5" />
                                                 <span className="sr-only">LinkedIn</span>
                                             </Button>
                                         </Link>
-                                        <Link href="mailto:hello@example.com">
+                                        <Link href={links.email}>
                                             <Button variant="ghost" size="icon">
                                                 <Mail className="h-5 w-5" />
                                                 <span className="sr-only">Email</span>
