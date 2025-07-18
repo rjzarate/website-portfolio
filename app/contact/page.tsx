@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/v0/ui/label";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { email, locations, phone } from "@/lib/constants";
 
 export default function ContactPage() {
     const { toast } = useToast();
@@ -60,68 +61,7 @@ export default function ContactPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="mx-auto grid max-w-6xl gap-6 py-12 lg:grid-cols-2">
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>Send a Message</CardTitle>
-                                    <CardDescription>
-                                        Fill out the form below and I'll get back to you as soon as possible.
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <form onSubmit={handleSubmit} className="space-y-4">
-                                        <div className="space-y-2">
-                                            <Label htmlFor="name">Name</Label>
-                                            <Input
-                                                id="name"
-                                                name="name"
-                                                placeholder="Your name"
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="email">Email</Label>
-                                            <Input
-                                                id="email"
-                                                name="email"
-                                                type="email"
-                                                placeholder="Your email"
-                                                value={formData.email}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="subject">Subject</Label>
-                                            <Input
-                                                id="subject"
-                                                name="subject"
-                                                placeholder="Subject"
-                                                value={formData.subject}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="message">Message</Label>
-                                            <Textarea
-                                                id="message"
-                                                name="message"
-                                                placeholder="Your message"
-                                                value={formData.message}
-                                                onChange={handleChange}
-                                                rows={5}
-                                                required
-                                            />
-                                        </div>
-                                        <Button type="submit" className="w-full" disabled={isSubmitting}>
-                                            {isSubmitting ? "Sending..." : "Send Message"}
-                                        </Button>
-                                    </form>
-                                </CardContent>
-                            </Card>
+                        <div className="mx-auto grid max-w-6xl gap-6 py-12 lg:grid-cols-1">
                             <div className="flex flex-col gap-6">
                                 <Card>
                                     <CardHeader>
@@ -133,21 +73,28 @@ export default function ContactPage() {
                                             <Mail className="h-5 w-5 mt-0.5 text-primary" />
                                             <div>
                                                 <h3 className="font-medium">Email</h3>
-                                                <p className="text-sm text-muted-foreground">hello@example.com</p>
+                                                <p className="text-sm text-muted-foreground">{email}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-4">
                                             <Phone className="h-5 w-5 mt-0.5 text-primary" />
                                             <div>
                                                 <h3 className="font-medium">Phone</h3>
-                                                <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                                                <p className="text-sm text-muted-foreground">{phone}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-4">
                                             <MapPin className="h-5 w-5 mt-0.5 text-primary" />
                                             <div>
-                                                <h3 className="font-medium">Location</h3>
-                                                <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                                                <h3 className="font-medium">Locations</h3>
+                                                <p className="text-sm text-muted-foreground">
+                                                    {locations.map((loc) => (
+                                                        <span key={loc}>
+                                                            {loc}
+                                                            <br />
+                                                        </span>
+                                                    ))}
+                                                </p>
                                             </div>
                                         </div>
                                     </CardContent>
@@ -162,14 +109,29 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-medium">Current Status</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    I'm currently available for freelance work and open to full-time
-                                                    opportunities.
+                                                    I'm <span className="text-black">currently available</span> for both
+                                                    part-time and full-time opportunities related to software
+                                                    engineering!
+                                                    <br />
+                                                    Feel free to reach out if you have a project in mind or need
+                                                    assistance with your software! 😊
                                                 </p>
                                             </div>
                                             <div>
                                                 <h3 className="font-medium">Response Time</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    I typically respond to all inquiries within 24-48 hours.
+                                                    <span className="text-black">Email:</span> I typically respond
+                                                    within 1-2 business days.
+                                                    <br />
+                                                    <span className="text-black">Phone:</span> Usually, I am available
+                                                    for calls during these hours —
+                                                    <br />
+                                                    <span className="pl-4">
+                                                        Monday to Friday: 11 AM - 1 PM, 3 PM - 5 PM <i>(PST)</i>
+                                                    </span>
+                                                    <br />
+                                                    If I don't answer, please leave a message, and I'll get back to you
+                                                    as soon as possible.
                                                 </p>
                                             </div>
                                         </div>
