@@ -3,10 +3,12 @@
 import type React from "react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/v0/ui/card";
-import { CircleUserRound, Mail, MapPin, Phone } from "lucide-react";
+import { CircleUserRound, Download, Mail, MapPin, Phone } from "lucide-react";
 import { email, fullName, locations, phone } from "@/lib/constants";
 
 import "@/styles/portfolio.css";
+import Link from "next/link";
+import { Button } from "@/components/v0/ui/button";
 
 export default function ContactPage() {
     return (
@@ -87,6 +89,17 @@ export default function ContactPage() {
                                                     Feel free to reach out if you have a project in mind or need
                                                     assistance with your software! 😊
                                                 </p>
+                                            </div>
+                                            <div>
+                                                <Link
+                                                    href="/Froilan-Zarate-Jr-Resume.pdf"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
+                                                    <Button className="inline-flex h-10 items-center justify-center">
+                                                        <Download className="h-4 w-4" />
+                                                        Download Resume
+                                                    </Button>
+                                                </Link>
                                             </div>
                                             <div>
                                                 <h3 className="font-medium">Response Time</h3>

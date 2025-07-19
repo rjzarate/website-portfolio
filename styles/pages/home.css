@@ -53,6 +53,22 @@
     }
 }
 
+/* <div className="flex flex-col gap-2 min-[400px]:flex-row"> */
+.welcome-buttons .resume-button {
+    display: flex;
+    height: 2.5rem;
+    gap: 0.5rem; /* 2 */
+    @media (min-width: 400px) {
+        flex-direction: row;
+    }
+}
+
+/* <ArrowRight className="h-4 w-4" /> */
+.resume-button .download-icon {
+    height: 1rem; /* 4 */
+    width: 1rem; /* 4 */
+}
+
 /* <Button className="inline-flex h-10 items-center justify-center"> */
 .welcome-buttons .view-projects-button {
     display: inline-flex;

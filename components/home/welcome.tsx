@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/v0/ui/button";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import React from "react";
 
 import { links, images } from "@/lib/constants";
@@ -20,12 +20,22 @@ const Welcome = () => {
                         <p>I'm an aspiring software engineer with a passion for building projects!</p>
                     </div>
                     <div className="welcome-buttons">
+                        <Link href="/Froilan-Zarate-Jr-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                            <Button className="resume-button">
+                                <Download className="download-icon" />
+                                Download Resume
+                            </Button>
+                        </Link>
+                    </div>
+                    <div className="welcome-buttons">
                         <Link href="/projects">
                             <Button className="view-projects-button">
                                 View My Work
                                 <ArrowRight className="arrow-icon" />
                             </Button>
                         </Link>
+                    </div>
+                    <div className="welcome-buttons">
                         <Link href="/contact">
                             <Button variant="outline" className="contact-me-button">
                                 Contact Me
