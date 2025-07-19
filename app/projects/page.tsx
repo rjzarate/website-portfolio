@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/v0/ui/badge";
 import { Input } from "@/components/v0/ui/input";
 import { ExternalLink, Github, Search } from "lucide-react";
+import { projects } from "@/lib/constants";
 
 import "@/styles/portfolio.css";
 
@@ -59,13 +60,15 @@ export default function ProjectsPage() {
                                     key={project.id}
                                     className="overflow-hidden group hover:shadow-lg transition-shadow">
                                     <div className="relative aspect-video overflow-hidden">
-                                        <Image
-                                            src={project.image || "/placeholder.svg"}
-                                            alt={project.title}
-                                            width={600}
-                                            height={400}
-                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                        />
+                                        <Link href={`/projects/${project.id}`}>
+                                            <Image
+                                                src={project.image || "/placeholder.svg"}
+                                                alt={project.title}
+                                                width={600}
+                                                height={400}
+                                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                        </Link>
                                     </div>
                                     <CardHeader>
                                         <CardTitle>{project.title}</CardTitle>
@@ -133,142 +136,3 @@ export default function ProjectsPage() {
         </div>
     );
 }
-
-// Enhanced projects data with more details
-const projects = [
-    {
-        id: "ecommerce-platform",
-        title: "E-commerce Platform",
-        shortDescription: "A full-stack e-commerce solution",
-        description:
-            "A complete e-commerce platform with product management, shopping cart, and payment integration using Stripe.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["React", "Node.js", "MongoDB", "Stripe", "Express", "JWT"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Full Stack",
-        duration: "3 months",
-        teamSize: "Solo project",
-        challenges: ["Payment integration", "Inventory management", "User authentication"],
-        features: ["Product catalog", "Shopping cart", "Payment processing", "Order tracking", "Admin dashboard"],
-        detailedDescription:
-            "This comprehensive e-commerce platform was built to provide a seamless shopping experience for both customers and administrators. The project includes a responsive frontend built with React, a robust backend API using Node.js and Express, and a MongoDB database for data persistence.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-    {
-        id: "portfolio-website",
-        title: "Portfolio Website",
-        shortDescription: "A responsive portfolio website",
-        description:
-            "A responsive portfolio website built with Next.js and Tailwind CSS to showcase my work and skills.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Frontend",
-        duration: "2 weeks",
-        teamSize: "Solo project",
-        challenges: ["Performance optimization", "SEO implementation", "Responsive design"],
-        features: ["Dark mode", "Responsive design", "Contact form", "Project showcase", "Blog integration"],
-        detailedDescription:
-            "A modern portfolio website designed to showcase my skills and projects. Built with Next.js for optimal performance and SEO, featuring a clean design system and smooth animations.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-    {
-        id: "task-management-app",
-        title: "Task Management App",
-        shortDescription: "A cross-platform mobile application",
-        description: "A cross-platform mobile application for task management built with React Native and Firebase.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["React Native", "Firebase", "Redux", "Expo"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Mobile",
-        duration: "4 months",
-        teamSize: "2 developers",
-        challenges: ["Cross-platform compatibility", "Offline functionality", "Real-time synchronization"],
-        features: ["Task creation", "Team collaboration", "Push notifications", "Offline mode", "Calendar integration"],
-        detailedDescription:
-            "A comprehensive task management application that helps teams stay organized and productive. Features real-time collaboration, offline functionality, and seamless synchronization across devices.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-    {
-        id: "analytics-dashboard",
-        title: "Analytics Dashboard",
-        shortDescription: "An admin dashboard with data visualization",
-        description: "An admin dashboard with data visualization, user management, and reporting features.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["React", "D3.js", "Material UI", "Python", "FastAPI"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Full Stack",
-        duration: "6 months",
-        teamSize: "3 developers",
-        challenges: ["Large dataset visualization", "Real-time updates", "Performance optimization"],
-        features: ["Interactive charts", "Real-time data", "User management", "Export functionality", "Custom reports"],
-        detailedDescription:
-            "A powerful analytics dashboard that processes and visualizes large datasets in real-time. Built with modern web technologies to provide insights and actionable data for business decisions.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-    {
-        id: "blog-platform",
-        title: "Blog Platform",
-        shortDescription: "A content management system",
-        description: "A blog platform with content management, user authentication, and commenting features.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["Next.js", "PostgreSQL", "Prisma", "NextAuth"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Full Stack",
-        duration: "2 months",
-        teamSize: "Solo project",
-        challenges: ["Content management", "SEO optimization", "User authentication"],
-        features: ["Rich text editor", "Comment system", "User profiles", "SEO optimization", "Social sharing"],
-        detailedDescription:
-            "A modern blog platform with a focus on content creation and community engagement. Features a rich text editor, commenting system, and comprehensive SEO optimization.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-    {
-        id: "weather-app",
-        title: "Weather App",
-        shortDescription: "A weather forecast application",
-        description:
-            "A weather forecast application that provides real-time weather data and forecasts for any location.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["React", "OpenWeather API", "Styled Components", "PWA"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Frontend",
-        duration: "1 month",
-        teamSize: "Solo project",
-        challenges: ["API integration", "Geolocation", "Offline functionality"],
-        features: ["Current weather", "7-day forecast", "Location search", "Offline mode", "Weather alerts"],
-        detailedDescription:
-            "A comprehensive weather application that provides accurate weather information and forecasts. Built as a Progressive Web App with offline capabilities and location-based services.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-];

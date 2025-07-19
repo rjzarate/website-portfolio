@@ -45,7 +45,7 @@ const Projects = () => {
                     <p>Check out some of my recent work</p>
                 </div>
             </div>
-            <div className="projects-grid">
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                 {featuredProjects.map((project) => (
                     <Link key={project.id} href={`/projects#${project.id}`}>
                         <div className="group relative overflow-hidden rounded-lg border">
