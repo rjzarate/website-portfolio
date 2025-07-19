@@ -10,10 +10,12 @@ import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { projects } from "@/lib/constants";
 
 import "@/styles/portfolio.css";
+import React from "react";
 
 // This would typically come from a database or CMS
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-    const project = projects.find((p) => p.id === params.id);
+export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
+    const param = await params;
+    const project = projects.find((p) => p.id === param.id);
 
     if (!project) {
         notFound();
