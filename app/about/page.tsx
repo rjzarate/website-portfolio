@@ -7,6 +7,38 @@ import { Download } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { name } from "@/lib/constants";
 
+const experience = [
+    {
+        position: "Front Desk Receptionist",
+        company: "Milpitas Star Fitness & Aquatics",
+        period: "Aug. 2024 - Present",
+        responsibilities: [
+            "Using a database to alter customer’s membership and swimming information",
+            "Coded scripts to automate closing procedures",
+        ],
+    },
+    {
+        position: "Cashier & Barista",
+        company: "Teasociety",
+        period: "Aug. 2022 - Feb. 2023",
+        responsibilities: [
+            "Memorized the process of making +40 drinks",
+            "Alone, finished a 20-drink Door Dash order while simultaneously taking walk-in orders",
+        ],
+    },
+];
+
+const education = [
+    {
+        degree: "Bachelor of Science in Computer Science",
+        institution: "San José State University",
+        year: "Aug. 2022 - May 2025",
+        description:
+            "Data Structures, Algorithms, Game Development, Computer Graphics, Database Management, Software Engineering.",
+        gpa: "3.8 (Magna Cum Laude)",
+    },
+];
+
 export default function AboutPage() {
     const sections = [
         { id: "about", label: "About" },
@@ -204,37 +236,3 @@ export default function AboutPage() {
         </SideNavigation>
     );
 }
-
-// Sample experience data
-const experience = [
-    {
-        position: "Front Desk Receptionist",
-        company: "Milpitas Star Fitness & Aquatics",
-        period: "Aug. 2024 - Present",
-        responsibilities: [
-            "Using a database to alter customer’s membership and swimming information",
-            "Coded scripts to automate closing procedures",
-        ],
-    },
-    {
-        position: "Cashier & Barista",
-        company: "Teasociety",
-        period: "Aug. 2022 - Feb. 2023",
-        responsibilities: [
-            "Memorized the process of making +40 drinks",
-            "Alone, finished a 20-drink Door Dash order while simultaneously taking walk-in orders",
-        ],
-    },
-];
-
-// Sample education data
-const education = [
-    {
-        degree: "Bachelor of Science in Computer Science",
-        institution: "San José State University",
-        year: "Aug. 2022 - May 2025",
-        description:
-            "Data Structures, Algorithms, Game Development, Computer Graphics, Database Management, Software Engineering.",
-        gpa: "3.8 (Magna Cum Laude)",
-    },
-];

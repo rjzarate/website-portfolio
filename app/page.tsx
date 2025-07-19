@@ -5,9 +5,48 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { links, name } from "@/lib/constants";
 
+// Sample data
+const featuredProjects = [
+    {
+        id: "project1",
+        title: "E-commerce Platform",
+        description: "A full-stack e-commerce solution with payment integration",
+        image: "/placeholder.svg?height=400&width=600",
+    },
+    {
+        id: "project2",
+        title: "Portfolio Website",
+        description: "A responsive portfolio website built with Next.js",
+        image: "/placeholder.svg?height=400&width=600",
+    },
+    {
+        id: "project3",
+        title: "Mobile App",
+        description: "A cross-platform mobile application for task management",
+        image: "/placeholder.svg?height=400&width=600",
+    },
+    {
+        id: "project4",
+        title: "Dashboard UI",
+        description: "An admin dashboard with data visualization",
+        image: "/placeholder.svg?height=400&width=600",
+    },
+];
+
+const skills = [
+    { name: "React", icon: () => <span className="text-blue-500">⚛️</span> },
+    { name: "Next.js", icon: () => <span>▲</span> },
+    { name: "Vite", icon: () => <span className="text-yellow-500">⚡</span> },
+    { name: "MySQL", icon: () => <span className="text-blue-400">🐬</span> },
+    { name: "Spark", icon: () => <span className="text-orange-500">🔥</span> },
+    { name: "Flask", icon: () => <span className="text-gray-700">🥃</span> },
+    { name: "Unity", icon: () => <span className="text-black">🕹️</span> },
+    { name: "Git", icon: () => <span className="text-red-500">🌱</span> },
+];
+
 export default function Home() {
     const sections = [
-        { id: "hero", label: "Hero" },
+        { id: "welcome", label: "Welcome" },
         { id: "projects", label: "Featured Projects" },
         { id: "skills", label: "Skills" },
     ];
@@ -16,7 +55,7 @@ export default function Home() {
         <SideNavigation sections={sections}>
             <div className="flex flex-col min-h-[100dvh]">
                 <main className="flex-1">
-                    <section id="hero" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+                    <section id="welcome" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                                 <div className="flex flex-col justify-center space-y-4">
@@ -25,8 +64,7 @@ export default function Home() {
                                             Hi, I'm <span className="text-primary">{name}</span>
                                         </h1>
                                         <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                                            I'm a full-stack developer with a passion for creating beautiful,
-                                            functional, and user-centered digital experiences.
+                                            I'm an aspiring software engineer with a passion for building projects!
                                         </p>
                                     </div>
                                     <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -156,43 +194,3 @@ export default function Home() {
         </SideNavigation>
     );
 }
-
-// Sample data
-const featuredProjects = [
-    {
-        id: "project1",
-        title: "E-commerce Platform",
-        description: "A full-stack e-commerce solution with payment integration",
-        image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-        id: "project2",
-        title: "Portfolio Website",
-        description: "A responsive portfolio website built with Next.js",
-        image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-        id: "project3",
-        title: "Mobile App",
-        description: "A cross-platform mobile application for task management",
-        image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-        id: "project4",
-        title: "Dashboard UI",
-        description: "An admin dashboard with data visualization",
-        image: "/placeholder.svg?height=400&width=600",
-    },
-];
-
-// Sample skills data
-const skills = [
-    { name: "React", icon: () => <span className="text-blue-500">⚛️</span> },
-    { name: "Next.js", icon: () => <span>▲</span> },
-    { name: "TypeScript", icon: () => <span className="text-blue-600">TS</span> },
-    { name: "Node.js", icon: () => <span className="text-green-500">🟢</span> },
-    { name: "Tailwind CSS", icon: () => <span className="text-cyan-500">🌊</span> },
-    { name: "MongoDB", icon: () => <span className="text-green-600">🍃</span> },
-    { name: "PostgreSQL", icon: () => <span className="text-blue-400">🐘</span> },
-    { name: "GraphQL", icon: () => <span className="text-pink-600">◼</span> },
-];
