@@ -106,7 +106,7 @@ export default function Home() {
                                 <div className="flex items-center justify-center">
                                     <div className="relative aspect-square overflow-hidden rounded-full border">
                                         <Image
-                                            src="/placeholder.svg?height=600&width=600"
+                                            src="/profile.jpeg"
                                             alt="Profile"
                                             width={600}
                                             height={600}
@@ -155,9 +155,10 @@ export default function Home() {
                                 <Link href="/projects">
                                     <Button
                                         variant="outline"
-                                        className="inline-flex h-10 items-center justify-center bg-transparent">
+                                        size="lg"
+                                        className="inline-flex h-12 px-8 text-lg items-center justify-center bg-transparent">
                                         View All Projects
-                                        <ArrowRight className="ml-2 h-4 w-4" />
+                                        <ArrowRight className="ml-2 h-5 w-5" />
                                     </Button>
                                 </Link>
                             </div>
