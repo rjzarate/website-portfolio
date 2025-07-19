@@ -9,6 +9,8 @@ import { Badge } from "@/components/v0/ui/badge";
 import { Input } from "@/components/v0/ui/input";
 import { ExternalLink, Github, Search } from "lucide-react";
 
+import "@/styles/portfolio.css";
+
 export default function ProjectsPage() {
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -25,9 +27,9 @@ export default function ProjectsPage() {
     }, [searchQuery]);
 
     return (
-        <div className="flex flex-col min-h-[100dvh]">
+        <div className="main-page">
             <main className="flex-1">
-                <section className="w-full py-12 md:py-24 lg:py-32">
+                <section className="page-section">
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">

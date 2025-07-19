@@ -5,6 +5,8 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { images, links, name } from "@/lib/constants";
 
+import "@/styles/portfolio.css";
+
 // Sample data
 const featuredProjects = [
     {
@@ -53,9 +55,9 @@ export default function Home() {
 
     return (
         <SideNavigation sections={sections}>
-            <div className="flex flex-col min-h-[100dvh]">
+            <div className="main-page">
                 <main className="flex-1">
-                    <section id="welcome" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+                    <section id="welcome" className="page-section xl:py-48">
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                                 <div className="flex flex-col justify-center space-y-4">
@@ -118,7 +120,7 @@ export default function Home() {
                             </div>
                         </div>
                     </section>
-                    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <section id="projects" className="page-section bg-muted">
                         <div className="container px-4 md:px-6">
                             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                                 <div className="space-y-2">
@@ -164,7 +166,7 @@ export default function Home() {
                             </div>
                         </div>
                     </section>
-                    <section id="skills" className="w-full py-12 md:py-24 lg:py-32">
+                    <section id="skills" className="page-section">
                         <div className="container px-4 md:px-6">
                             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                                 <div className="space-y-2">

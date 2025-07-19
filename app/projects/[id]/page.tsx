@@ -9,6 +9,8 @@ import { ArrowLeft, ExternalLink, Github, Calendar, Users, Target } from "lucide
 import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { projects } from "@/lib/constants";
 
+import "@/styles/portfolio.css";
+
 // This would typically come from a database or CMS
 export default function ProjectDetailPage({ params }: { params: { id: string } }) {
     const project = projects.find((p) => p.id === params.id);
@@ -28,10 +30,10 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
     return (
         <SideNavigation sections={sections}>
-            <div className="flex flex-col min-h-[100dvh]">
+            <div className="main-page">
                 <main className="flex-1">
                     {/* Overview Section */}
-                    <section id="overview" className="w-full py-12 md:py-24 lg:py-32">
+                    <section id="overview" className="page-section">
                         <div className="container px-4 md:px-6">
                             <div className="flex items-center gap-4 mb-8">
                                 <Link href="/projects">
@@ -135,7 +137,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     </section>
 
                     {/* Problem Section */}
-                    <section id="problem" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <section id="problem" className="page-section bg-muted">
                         <div className="container px-4 md:px-6">
                             <div className="max-w-3xl mx-auto space-y-6">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">The Problem</h2>
@@ -147,7 +149,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     </section>
 
                     {/* Solution Section */}
-                    <section id="solution" className="w-full py-12 md:py-24 lg:py-32">
+                    <section id="solution" className="page-section">
                         <div className="container px-4 md:px-6">
                             <div className="max-w-3xl mx-auto space-y-6">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">The Solution</h2>
@@ -157,7 +159,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     </section>
 
                     {/* Features Section */}
-                    <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <section id="features" className="page-section bg-muted">
                         <div className="container px-4 md:px-6">
                             <div className="max-w-4xl mx-auto">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">Key Features</h2>
@@ -179,7 +181,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     </section>
 
                     {/* Gallery Section */}
-                    <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
+                    <section id="gallery" className="page-section">
                         <div className="container px-4 md:px-6">
                             <div className="max-w-4xl mx-auto">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">
@@ -205,7 +207,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     </section>
 
                     {/* Results Section */}
-                    <section id="results" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <section id="results" className="page-section bg-muted">
                         <div className="container px-4 md:px-6">
                             <div className="max-w-3xl mx-auto space-y-8">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Results & Impact</h2>

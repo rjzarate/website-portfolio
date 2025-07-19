@@ -2,56 +2,17 @@
 
 import type React from "react";
 
-import { useState } from "react";
-import { Button } from "@/components/v0/ui/button";
-import { Input } from "@/components/v0/ui/input";
-import { Textarea } from "@/components/v0/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/v0/ui/card";
-import { Label } from "@/components/v0/ui/label";
-import { CircleUserRound, Mail, MapPin, Phone, SquareUserRound, User } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { CircleUserRound, Mail, MapPin, Phone } from "lucide-react";
 import { email, fullName, locations, phone } from "@/lib/constants";
 
+import "@/styles/portfolio.css";
+
 export default function ContactPage() {
-    const { toast } = useToast();
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-
-        toast({
-            title: "Message sent!",
-            description: "Thank you for your message. I'll get back to you soon.",
-        });
-
-        setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        });
-        setIsSubmitting(false);
-    };
-
     return (
-        <div className="flex flex-col min-h-[100dvh]">
+        <div className="main-page">
             <main className="flex-1">
-                <section className="w-full py-12 md:py-24 lg:py-32">
+                <section className="page-section">
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">

@@ -7,6 +7,8 @@ import { Download } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { images, name } from "@/lib/constants";
 
+import "@/styles/portfolio.css";
+
 const experience = [
     {
         position: "Front Desk Receptionist",
@@ -49,9 +51,9 @@ export default function AboutPage() {
 
     return (
         <SideNavigation sections={sections}>
-            <div className="flex flex-col min-h-[100dvh]">
+            <div className="main-page">
                 <main className="flex-1">
-                    <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+                    <section id="about" className="page-section">
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
                                 <div className="flex flex-col justify-center space-y-4">
@@ -104,7 +106,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </section>
-                    <section id="hobbies" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <section id="hobbies" className="page-section bg-muted">
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-[400px_1fr] lg:gap-12 xl:grid-cols-[500px_1fr]">
                                 <div className="flex items-center justify-center">
@@ -168,7 +170,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </section>
-                    <section id="education" className="w-full py-12 md:py-24 lg:py-32">
+                    <section id="education" className="page-section">
                         <div className="container px-4 md:px-6">
                             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                                 <div className="space-y-2">
@@ -197,7 +199,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </section>
-                    <section id="experience" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <section id="experience" className="page-section bg-muted">
                         <div className="container px-4 md:px-6">
                             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                                 <div className="space-y-2">

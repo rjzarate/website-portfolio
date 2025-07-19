@@ -1,0 +1,21 @@
+/* <div className="flex flex-col min-h-[100dvh]"> */
+.main-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+/* <section id="overview" className="w-full py-12 md:py-24 lg:py-32"> */
+.page-section {
+    width: 100%;
+    padding-top: 3rem; /* 12 */
+    padding-bottom: 3rem; /* 12 */
+    @media (min-width: 768px) {
+        padding-top: 6rem; /* 24 */
+        padding-bottom: 6rem; /* 24 */
+    }
+    @media (min-width: 1024px) {
+        padding-top: 8rem; /* 32 */
+        padding-bottom: 8rem; /* 32 */
+    }
+}
