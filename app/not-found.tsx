@@ -32,7 +32,6 @@ const NotFound = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="mx-auto grid max-w-6xl gap-6 py-56 lg:grid-cols-1" />
                 </section>
             </main>
         </div>

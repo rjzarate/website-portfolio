@@ -21,8 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={inter.className}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                     <div className="flex flex-col min-h-screen items-center justify-center">
-                        <Navbar />
-                        {children}
+                        <nav className="w-full sticky top-0 z-50">
+                            <Navbar />
+                        </nav>
+                        <main className="flex-1">{children}</main>
                         <Footer />
                     </div>
                     <Toaster />
