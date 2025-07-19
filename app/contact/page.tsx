@@ -109,7 +109,7 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-medium">Current Status</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    I'm <span className="text-black">currently available</span> for both
+                                                    I'm <span className="font-bold">currently available</span> for both
                                                     part-time and full-time opportunities related to software
                                                     engineering!
                                                     <br />
@@ -120,14 +120,17 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-medium">Response Time</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    <span className="text-black">Email:</span> I typically respond
-                                                    within 1-2 business days.
+                                                    <span className="font-bold text-foreground">Email:</span> I
+                                                    typically respond within 1-2 business days.
                                                     <br />
-                                                    <span className="text-black">Phone:</span> Usually, I am available
-                                                    for calls during these hours —
+                                                    <span className="font-bold text-foreground">Phone:</span> Usually, I
+                                                    am available for calls during these hours —
                                                     <br />
                                                     <span className="pl-4">
-                                                        Monday to Friday: 11 AM - 1 PM, 3 PM - 5 PM <i>(PST)</i>
+                                                        <span className="text-foreground">
+                                                            Monday to Friday: 11 AM - 1 PM, 3 PM - 5 PM
+                                                        </span>{" "}
+                                                        <i>(PST)</i>
                                                     </span>
                                                     <br />
                                                     If I don't answer, please leave a message, and I'll get back to you
