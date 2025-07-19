@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/v0/ui/badge";
 import { Download } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
-import { name } from "@/lib/constants";
+import { images, name } from "@/lib/constants";
 
 const experience = [
     {
@@ -93,7 +93,7 @@ export default function AboutPage() {
                                 <div className="flex items-center justify-center">
                                     <div className="relative aspect-square overflow-hidden rounded-xl border">
                                         <Image
-                                            src="/placeholder.svg?height=600&width=600"
+                                            src={images.profile1}
                                             alt="Profile"
                                             width={600}
                                             height={600}
@@ -110,28 +110,28 @@ export default function AboutPage() {
                                 <div className="flex items-center justify-center">
                                     <div className="grid grid-cols-2 grid-rows-2 gap-4 aspect-square overflow-hidden rounded-xl border p-4 bg-background">
                                         <Image
-                                            src="/placeholder.svg?height=600&width=600"
+                                            src={images.hobbiesCosplay}
                                             alt="Hobby 1"
                                             width={280}
                                             height={280}
                                             className="object-cover rounded-lg"
                                         />
                                         <Image
-                                            src="/placeholder.svg?height=600&width=600"
+                                            src={images.hobbiesPoker}
                                             alt="Hobby 2"
                                             width={280}
                                             height={280}
                                             className="object-cover rounded-lg"
                                         />
                                         <Image
-                                            src="/placeholder.svg?height=600&width=600"
+                                            src={images.hobbiesDND}
                                             alt="Hobby 3"
                                             width={280}
                                             height={280}
                                             className="object-cover rounded-lg"
                                         />
                                         <Image
-                                            src="/placeholder.svg?height=600&width=600"
+                                            src={images.hobbiesOutside}
                                             alt="Hobby 4"
                                             width={280}
                                             height={280}

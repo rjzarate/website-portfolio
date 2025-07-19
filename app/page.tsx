@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/v0/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import SideNavigation from "@/components/v0/scroll-snap-sections";
-import { links, name } from "@/lib/constants";
+import { images, links, name } from "@/lib/constants";
 
 // Sample data
 const featuredProjects = [
@@ -106,7 +106,7 @@ export default function Home() {
                                 <div className="flex items-center justify-center">
                                     <div className="relative aspect-square overflow-hidden rounded-full border">
                                         <Image
-                                            src="/profile.jpeg"
+                                            src={images.profile}
                                             alt="Profile"
                                             width={600}
                                             height={600}
