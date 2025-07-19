@@ -3,10 +3,10 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/v0/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/v0/ui/card";
+import { Badge } from "@/components/v0/ui/badge";
+import { Input } from "@/components/v0/ui/input";
 import { ExternalLink, Github, Search } from "lucide-react";
 
 export default function ProjectsPage() {
@@ -151,29 +151,6 @@ const projects = [
         features: ["Product catalog", "Shopping cart", "Payment processing", "Order tracking", "Admin dashboard"],
         detailedDescription:
             "This comprehensive e-commerce platform was built to provide a seamless shopping experience for both customers and administrators. The project includes a responsive frontend built with React, a robust backend API using Node.js and Express, and a MongoDB database for data persistence.",
-        gallery: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-        ],
-    },
-    {
-        id: "portfolio-website",
-        title: "Portfolio Website",
-        shortDescription: "A responsive portfolio website",
-        description:
-            "A responsive portfolio website built with Next.js and Tailwind CSS to showcase my work and skills.",
-        image: "/placeholder.svg?height=400&width=600",
-        technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
-        demoUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        category: "Frontend",
-        duration: "2 weeks",
-        teamSize: "Solo project",
-        challenges: ["Performance optimization", "SEO implementation", "Responsive design"],
-        features: ["Dark mode", "Responsive design", "Contact form", "Project showcase", "Blog integration"],
-        detailedDescription:
-            "A modern portfolio website designed to showcase my skills and projects. Built with Next.js for optimal performance and SEO, featuring a clean design system and smooth animations.",
         gallery: [
             "/placeholder.svg?height=400&width=600",
             "/placeholder.svg?height=400&width=600",
