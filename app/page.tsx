@@ -61,7 +61,7 @@ export default function Home() {
                                 <div className="flex flex-col justify-center space-y-4">
                                     <div className="space-y-2">
                                         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                                            Hi, I'm <span className="text-primary">{name}</span>
+                                            Hello! I'm <span className="text-primary">Froy</span>
                                         </h1>
                                         <p className="max-w-[600px] text-muted-foreground md:text-xl">
                                             I'm an aspiring software engineer with a passion for building projects!

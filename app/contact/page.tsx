@@ -8,9 +8,9 @@ import { Input } from "@/components/v0/ui/input";
 import { Textarea } from "@/components/v0/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/v0/ui/card";
 import { Label } from "@/components/v0/ui/label";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { CircleUserRound, Mail, MapPin, Phone, SquareUserRound, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { email, locations, phone } from "@/lib/constants";
+import { email, fullName, locations, phone } from "@/lib/constants";
 
 export default function ContactPage() {
     const { toast } = useToast();
@@ -70,6 +70,13 @@ export default function ContactPage() {
                                     </CardHeader>
                                     <CardContent className="space-y-4">
                                         <div className="flex items-start gap-4">
+                                            <CircleUserRound className="h-5 w-5 mt-0.5 text-primary" />
+                                            <div>
+                                                <h3 className="font-medium">Full Name</h3>
+                                                <p className="text-sm text-muted-foreground">{fullName}</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-4">
                                             <Mail className="h-5 w-5 mt-0.5 text-primary" />
                                             <div>
                                                 <h3 className="font-medium">Email</h3>
@@ -107,10 +114,13 @@ export default function ContactPage() {
                                     <CardContent>
                                         <div className="space-y-4">
                                             <div>
-                                                <h3 className="font-medium">Current Status</h3>
+                                                <h3 className="font-medium">Current Status ✅</h3>
                                                 <p className="text-sm text-muted-foreground">
-                                                    I'm <span className="font-bold">currently available</span> for both
-                                                    part-time and full-time opportunities related to software
+                                                    I'm{" "}
+                                                    <span className="font-bold text-foreground">
+                                                        currently available to work
+                                                    </span>{" "}
+                                                    for both part-time and full-time opportunities related to software
                                                     engineering!
                                                     <br />
                                                     Feel free to reach out if you have a project in mind or need

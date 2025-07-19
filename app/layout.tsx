@@ -11,7 +11,7 @@ import { name } from "@/lib/constants";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: name + " | Portfolio",
+    title: "Froilan Jr | Portfolio",
     description: "Personal portfolio website of " + name + ", a full-stack developer",
     generator: "v0.dev",
 };
