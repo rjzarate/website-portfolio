@@ -12,8 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Froilan Jr | Portfolio",
-    description: "Personal portfolio website of " + name + ", a full-stack developer",
-    generator: "v0.dev",
+    description: "Personal portfolio website of " + name + ", an aspiring developer",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

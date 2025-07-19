@@ -19,3 +19,23 @@
         padding-bottom: 8rem; /* 32 */
     }
 }
+
+/* <div className="container px-4 md:px-6"> */
+.page-section .container {
+    padding-left: 1rem; /* 4 */
+    padding-right: 1rem; /* 4 */
+    @media (min-width: 768px) {
+        padding-left: 1.5rem; /* 6 */
+        padding-right: 1.5rem; /* 6 */
+    }
+}
+
+/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl"> */
+.page-section h2 {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: bold;
+    letter-spacing: -0.025em; /* tracking-tighter */
+    @media (min-width: 640px) {
+        font-size: 3rem; /* 5xl */
+    }
+}

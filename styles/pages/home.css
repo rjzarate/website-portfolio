@@ -1,0 +1,268 @@
+/* <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]"> */
+.welcome-wrapper {
+    display: grid;
+    gap: 1.5rem; /* 6 */
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem; /* 12 */
+    }
+    @media (min-width: 1280px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4rem; /* 16 */
+    }
+}
+
+/* <div className="flex flex-col justify-center space-y-4"> */
+.welcome-main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem; /* 4 */
+}
+
+/* <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"> */
+.welcome-main-text h1 {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: bold;
+    letter-spacing: -0.025em; /* tracking-tighter */
+    @media (min-width: 640px) {
+        font-size: 3rem; /* 5xl */
+    }
+    @media (min-width: 1280px) {
+        font-size: 4rem; /* 6xl */
+        line-height: normal; /* none */
+    }
+}
+
+/* <p className="max-w-[600px] text-muted-foreground md:text-xl"> */
+.welcome-main-text p {
+    max-width: 37.5rem; /* 600px */
+    color: hsl(var(--muted-foreground));
+    @media (min-width: 768px) {
+        font-size: 1.25rem; /* xl */
+    }
+}
+
+/* <div className="flex flex-col gap-2 min-[400px]:flex-row"> */
+.welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 2 */
+    @media (min-width: 400px) {
+        flex-direction: row;
+    }
+}
+
+/* <Button className="inline-flex h-10 items-center justify-center"> */
+.welcome-buttons .view-projects-button {
+    display: inline-flex;
+    height: 2.5rem; /* 10 */
+    align-items: center;
+    justify-content: center;
+}
+
+/* <ArrowRight className="ml-2 h-4 w-4" /> */
+.view-projects-button .arrow-icon {
+    margin-left: 0.5rem; /* 2 */
+    height: 1rem; /* 4 */
+    width: 1rem; /* 4 */
+}
+
+/* className="inline-flex h-10 items-center justify-center bg-transparent"> */
+/* gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground px-4 py-2 inline-flex h-10 items-center justify-center bg-transparent */
+.welcome-buttons .contact-me-button {
+    display: inline-flex;
+    height: 2.5rem; /* 10 */
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    gap: 0.5rem; /* 2 */
+    white-space: nowrap;
+    border-radius: 0.375rem; /* md */
+    font-size: 0.875rem; /* sm */
+    font-weight: 500; /* medium */
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid hsl(var(--input));
+    &:hover {
+        background-color: hsl(var(--accent));
+        color: hsl(var(--accent-foreground));
+    }
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring-offset));
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    svg {
+        pointer-events: none;
+        width: 1rem; /* 4 */
+        height: 1rem; /* 4 */
+        flex-shrink: 0;
+    }
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+}
+
+/* <div className="flex items-center justify-center relative aspect-square overflow-hidden rounded-full border"> */
+.welcome-profile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    aspect-ratio: 1 / 1; /* square */
+    overflow: hidden;
+    border-radius: 9999px; /* full */
+    border: 1px solid hsl(var(--border));
+}
+
+/* <div className="flex gap-4"> */
+.welcome-main-text .links {
+    display: flex;
+    gap: 1rem; /* 4 */
+    flex-wrap: wrap;
+}
+
+/* <Github className="h-5 w-5" /> */
+.image-icon {
+    height: 1.25rem; /* 5 */
+    width: 1.25rem; /* 5 */
+}
+
+/* <div className="flex flex-col items-center justify-center space-y-4 text-center"> */
+.projects-main-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* 4 */
+    text-align: center;
+}
+
+/* <div className="space-y-2"> */
+.projects-main-text {
+    gap: 0.5rem; /* 2 */
+}
+
+/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl"> */
+.projects-main-text h2 {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: bold;
+    letter-spacing: -0.025em; /* tracking-tighter */
+    @media (min-width: 640px) {
+        font-size: 3rem; /* 5xl */
+    }
+}
+
+/* <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"> */
+.projects-main-text p {
+    max-width: 56.25rem; /* 900px */
+    color: hsl(var(--muted-foreground));
+    @media (min-width: 768px) {
+        font-size: 1.25rem; /* xl */
+        line-height: 1.75; /* relaxed */
+    }
+    @media (min-width: 1024px) {
+        font-size: 1rem; /* base */
+        line-height: 1.75; /* relaxed */
+    }
+    @media (min-width: 1280px) {
+        font-size: 1.25rem; /* xl */
+        line-height: 1.75; /* relaxed */
+    }
+}
+
+/* <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12"> */
+.projects-grid {
+    margin: 0 auto;
+    display: grid;
+    max-width: 80rem; /* 5xl */
+    align-items: center;
+    gap: 1.5rem; /* 6 */
+    padding-top: 3rem; /* 12 */
+    padding-bottom: 3rem; /* 12 */
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem; /* 12 */
+    }
+}
+
+/* className="inline-flex h-12 px-8 text-lg items-center justify-center bg-transparent"> */
+/* gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground rounded-md inline-flex h-12 px-8 text-lg items-center justify-center bg-transparent */
+.projects-all-projects-button {
+    display: inline-flex;
+    height: 3rem; /* 12 */
+    padding-left: 2rem; /* px-8 */
+    padding-right: 2rem; /* px-8 */
+    font-size: 1.125rem; /* lg */
+    font-weight: 500; /* medium */
+    background-color: transparent;
+    gap: 0.5rem; /* 2 */
+    white-space: nowrap;
+    border-radius: 0.375rem; /* md */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    border: 1px solid hsl(var(--input));
+    &:hover {
+        background-color: hsl(var(--accent));
+        color: hsl(var(--accent-foreground));
+        transform: scale(1.025);
+    }
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring-offset));
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+/* <div className="flex flex-col items-center justify-center space-y-4 text-center"> */
+.skills-main-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* 4 */
+    text-align: center;
+}
+
+/* <div className="space-y-2"> */
+.skills-main-text {
+    gap: 0.5rem; /* 2 */
+}
+
+/* <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"> */
+.skills-main-text p {
+    max-width: 56.25rem; /* 900px */
+    color: hsl(var(--muted-foreground));
+    @media (min-width: 768px) {
+        font-size: 1.25rem; /* xl */
+        line-height: 1.75; /* relaxed */
+    }
+    @media (min-width: 1024px) {
+        font-size: 1rem; /* base */
+        line-height: 1.75; /* relaxed */
+    }
+    @media (min-width: 1280px) {
+        font-size: 1.25rem; /* xl */
+        line-height: 1.75; /* relaxed */
+    }
+}
+
+/* <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 py-12 sm:grid-cols-3 md:grid-cols-4 lg:gap-12"> */
+.skills-grid {
+    margin: 0 auto;
+    display: grid;
+    max-width: 80rem; /* 5xl */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem; /* 6 */
+    padding-top: 3rem; /* 12 */
+    padding-bottom: 3rem; /* 12 */
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}

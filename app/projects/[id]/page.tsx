@@ -34,7 +34,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 <main className="flex-1">
                     {/* Overview Section */}
                     <section id="overview" className="page-section">
-                        <div className="container px-4 md:px-6">
+                        <div className="container">
                             <div className="flex items-center gap-4 mb-8">
                                 <Link href="/projects">
                                     <Button variant="ghost" size="sm" className="gap-2">
@@ -138,7 +138,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
                     {/* Problem Section */}
                     <section id="problem" className="page-section bg-muted">
-                        <div className="container px-4 md:px-6">
+                        <div className="container">
                             <div className="max-w-3xl mx-auto space-y-6">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">The Problem</h2>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -150,7 +150,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
                     {/* Solution Section */}
                     <section id="solution" className="page-section">
-                        <div className="container px-4 md:px-6">
+                        <div className="container">
                             <div className="max-w-3xl mx-auto space-y-6">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">The Solution</h2>
                                 <p className="text-lg text-muted-foreground leading-relaxed">{project.solution}</p>
@@ -160,7 +160,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
                     {/* Features Section */}
                     <section id="features" className="page-section bg-muted">
-                        <div className="container px-4 md:px-6">
+                        <div className="container">
                             <div className="max-w-4xl mx-auto">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">Key Features</h2>
                                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -182,7 +182,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
                     {/* Gallery Section */}
                     <section id="gallery" className="page-section">
-                        <div className="container px-4 md:px-6">
+                        <div className="container">
                             <div className="max-w-4xl mx-auto">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">
                                     Project Gallery
@@ -208,7 +208,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
                     {/* Results Section */}
                     <section id="results" className="page-section bg-muted">
-                        <div className="container px-4 md:px-6">
+                        <div className="container">
                             <div className="max-w-3xl mx-auto space-y-8">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Results & Impact</h2>
 
