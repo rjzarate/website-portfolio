@@ -15,6 +15,10 @@ import "@/styles/portfolio.css";
 import React, { use, useEffect, useState } from "react";
 import Overview from "@/components/projects/sections/overview";
 import { ProjectContext } from "@/hooks/use-project-context";
+import ProblemAndSolution from "@/components/projects/sections/problem-and-solution";
+import Features from "@/components/projects/sections/features";
+import Gallery from "@/components/projects/sections/gallery";
+import Results from "@/components/projects/sections/results";
 
 export interface Project {
     id: string;
@@ -30,6 +34,7 @@ export interface Project {
     teamSize: string;
     challenges: string[];
     features: string[];
+    featureDescriptions: string[];
     detailedDescription: string;
     gallery: string[];
     problemStatement: string;
@@ -56,44 +61,23 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
         { id: "results", label: "Results" },
     ];
 
-    console.log(ProjectContext);
-    console.log(ProjectContext.Provider);
+    const temp = [<Overview />, <ProblemAndSolution />];
 
     return (
         <SideNavigation sections={sections}>
             <div className="main-page">
                 <main className="flex-1">
-                    {/* Overview Section */}
                     <ProjectContext.Provider value={project}>
                         <Overview />
-                    </ProjectContext.Provider>
-
-                    {/* Problem & Solution Section */}
-                    <section id="problemSolution" className="page-section bg-muted">
-                        <div className="container">
-                            <div className="max-w-3xl mx-auto space-y-8">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Problem & Solution</h2>
-
-                                <div className="space-y-6">
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-4">Problem</h3>
-                                        <p className="text-lg text-muted-foreground leading-relaxed">
-                                            {project.problemStatement}
-                                        </p>
-                                    </div>
-
-                                    <Separator />
-
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-4">Solution</h3>
-                                        <p className="text-lg text-muted-foreground leading-relaxed">
-                                            {project.solution}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="bg-muted">
+                            <ProblemAndSolution />
                         </div>
-                    </section>
+                        <Features />
+                        <div className="bg-muted">
+                            <Gallery />
+                        </div>
+                        <Results />
+                    </ProjectContext.Provider>
 
                     {/* Problem Section */}
                     {/* <section id="problem" className="page-section bg-muted">
@@ -116,86 +100,6 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                             </div>
                         </div>
                     </section> */}
-
-                    {/* Features Section */}
-                    <section id="features" className="page-section">
-                        <div className="container">
-                            <div className="max-w-4xl mx-auto">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">Key Features</h2>
-                                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                                    {project.features.map((feature, index) => (
-                                        <Card key={index}>
-                                            <CardContent className="p-6">
-                                                <h3 className="font-semibold mb-2">{feature}</h3>
-                                                <p className="text-sm text-muted-foreground">
-                                                    Feature description would go here explaining the functionality and
-                                                    benefits.
-                                                </p>
-                                            </CardContent>
-                                        </Card>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Gallery Section */}
-                    <section id="gallery" className="page-section bg-muted">
-                        <div className="container">
-                            <div className="max-w-4xl mx-auto">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">
-                                    Project Gallery
-                                </h2>
-                                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                                    {project.gallery.map((image, index) => (
-                                        <div
-                                            key={index}
-                                            className="relative aspect-video overflow-hidden rounded-lg border">
-                                            <Image
-                                                src={image || "/placeholder.svg"}
-                                                alt={`${project.title} screenshot ${index + 1}`}
-                                                width={600}
-                                                height={400}
-                                                className="object-cover hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Results Section */}
-                    <section id="results" className="page-section">
-                        <div className="container">
-                            <div className="max-w-3xl mx-auto space-y-8">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Results & Impact</h2>
-
-                                <div className="space-y-6">
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-4">Key Achievements</h3>
-                                        <ul className="space-y-2">
-                                            {project.results.map((result, index) => (
-                                                <li key={index} className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                                                    <span className="text-muted-foreground">{result}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <Separator />
-
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-4">Lessons Learned</h3>
-                                        <p className="text-muted-foreground leading-relaxed">
-                                            {project.lessonsLearned}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </main>
             </div>
         </SideNavigation>

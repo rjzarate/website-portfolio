@@ -10,10 +10,6 @@ import { useProjectContext } from "@/hooks/use-project-context";
 const Overview = () => {
     const project = useProjectContext();
 
-    if (!project) {
-        return <div>Project not found</div>;
-    }
-
     return (
         <section id="overview" className="page-section1">
             <div className="container">
