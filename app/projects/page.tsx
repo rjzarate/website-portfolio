@@ -79,12 +79,12 @@ export default function ProjectsPage() {
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap gap-2 mt-4">
-                                            {project.technologies.slice(0, 3).map((tech) => (
+                                            {project.technologies.slice(0, 4).map((tech) => (
                                                 <Badge key={tech} variant="secondary">
                                                     {tech}
                                                 </Badge>
                                             ))}
-                                            {project.technologies.length > 3 && (
+                                            {project.technologies.length > 4 && (
                                                 <Badge variant="outline">+{project.technologies.length - 3}</Badge>
                                             )}
                                         </div>
