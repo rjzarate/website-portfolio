@@ -11,28 +11,28 @@ import "@/styles/pages/home.css";
 // Sample data
 const featuredProjects = [
     {
-        id: "project1",
-        title: "E-commerce Platform",
-        description: "A full-stack e-commerce solution with payment integration",
-        image: "/placeholder.svg?height=400&width=600",
+        id: "banking-application",
+        title: "Banking Application",
+        description: "A web-based banking application for Google users",
+        image: "/img/projects/banking-application/main.png",
     },
     {
-        id: "project2",
-        title: "Portfolio Website",
-        description: "A responsive portfolio website built with Next.js",
-        image: "/placeholder.svg?height=400&width=600",
+        id: "k4t",
+        title: "K4T",
+        description: "A Unity2D game where a cat must defeat bosses to save the world!",
+        image: "/img/projects/k4t/poster1.png",
     },
     {
-        id: "project3",
-        title: "Mobile App",
-        description: "A cross-platform mobile application for task management",
-        image: "/placeholder.svg?height=400&width=600",
+        id: "catch-bobo",
+        title: "Catch Bobo",
+        description: "A Minecraft 1.20 map with custom classes, textures, and abilities.",
+        image: "/img/projects/catch-bobo/main.png",
     },
     {
-        id: "project4",
-        title: "Dashboard UI",
-        description: "An admin dashboard with data visualization",
-        image: "/placeholder.svg?height=400&width=600",
+        id: "cinket",
+        title: "Cinket",
+        description: "My D&D website for my players / Password: Limitless",
+        image: "/img/projects/cinket/home.png",
     },
 ];
 
@@ -42,12 +42,12 @@ const Projects = () => {
             <div className="projects-main-text-wrapper">
                 <div className="projects-main-text">
                     <h2>Featured Projects</h2>
-                    <p>Check out some of my recent work</p>
+                    <p>Check out some of my favorite works</p>
                 </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                 {featuredProjects.map((project) => (
-                    <Link key={project.id} href={`/projects#${project.id}`}>
+                    <Link key={project.id} href={`/projects/${project.id}`}>
                         <div className="group relative overflow-hidden rounded-lg border">
                             <Image
                                 src={project.image || "/placeholder.svg"}
