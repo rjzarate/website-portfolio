@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/v0/ui/button";
@@ -14,6 +14,28 @@ import "@/styles/portfolio.css";
 
 export default function ProjectsPage() {
     const [searchQuery, setSearchQuery] = useState("");
+    const [technologyDisplay, setTechnologyDisplay] = useState(
+        getTechnologyCount(window === undefined ? 0 : innerWidth)
+    );
+
+    function getTechnologyCount(width: number) {
+        if (width >= 1280) return 8;
+        if (width >= 1024) return 6;
+        return 4;
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+            setTechnologyDisplay(getTechnologyCount(window.innerWidth));
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup function to remove the event listener
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const filteredProjects = useMemo(() => {
         if (!searchQuery) return projects;
@@ -79,13 +101,15 @@ export default function ProjectsPage() {
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap gap-2 mt-4">
-                                            {project.technologies.slice(0, 4).map((tech) => (
+                                            {project.technologies.slice(0, technologyDisplay).map((tech) => (
                                                 <Badge key={tech} variant="secondary">
                                                     {tech}
                                                 </Badge>
                                             ))}
-                                            {project.technologies.length > 4 && (
-                                                <Badge variant="outline">+{project.technologies.length - 3}</Badge>
+                                            {project.technologies.length > technologyDisplay && (
+                                                <Badge variant="outline">
+                                                    +{project.technologies.length - technologyDisplay}
+                                                </Badge>
                                             )}
                                         </div>
                                     </CardContent>
