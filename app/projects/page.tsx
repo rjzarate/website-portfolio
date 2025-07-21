@@ -28,9 +28,7 @@ type SortOption =
 export default function ProjectsPage() {
     const [searchQuery, setSearchQuery] = useState("");
     const [sortBy, setSortBy] = useState<SortOption>("favorite");
-    const [technologyDisplay, setTechnologyDisplay] = useState(
-        getTechnologyCount(window === undefined ? 0 : innerWidth)
-    );
+    const [technologyDisplay, setTechnologyDisplay] = useState(0);
 
     function getTechnologyCount(width: number) {
         if (width >= 1280) return 8;
@@ -45,6 +43,7 @@ export default function ProjectsPage() {
 
         window.addEventListener("resize", handleResize);
 
+        handleResize();
         // Cleanup function to remove the event listener
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -64,12 +63,6 @@ export default function ProjectsPage() {
                     project.category.toLowerCase().includes(searchQuery.toLowerCase())
             );
         }
-
-        projects.forEach((e) => {
-            console.log(e.title);
-            console.log(e.startDate);
-            console.log(e.endDate);
-        });
 
         // Then sort the filtered results
         const sorted = [...filtered].sort((a, b) => {

@@ -1,28 +1,20 @@
-import Image from "next/image";
 import { useProjectContext } from "@/hooks/use-project-context";
 import React from "react";
+import ImageGallery from "@/components/v0/image-gallery";
 
 const Gallery = () => {
     const project = useProjectContext();
 
+    if (project.gallery === undefined) {
+        throw Error("Gallery is undefined");
+    }
+
     return (
-        <section id="gallery" className="page-section">
-            <div className="container">
+        <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
+            <div className="container px-4 md:px-6">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">Project Gallery</h2>
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {project.gallery.map((image, index) => (
-                            <div key={index} className="relative aspect-video overflow-hidden rounded-lg border">
-                                <Image
-                                    src={image || "/placeholder.svg"}
-                                    alt={`${project.title} screenshot ${index + 1}`}
-                                    width={600}
-                                    height={400}
-                                    className="object-cover hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
-                        ))}
-                    </div>
+                    <ImageGallery images={project.gallery} projectTitle={project.title} />
                 </div>
             </div>
         </section>

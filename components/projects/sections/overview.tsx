@@ -63,11 +63,11 @@ const Overview = () => {
                     </div>
 
                     <div className="space-y-6">
-                        <div className="relative aspect-video overflow-hidden rounded-lg border">
+                        <div className="relative aspect-video overflow-hidden rounded-lg border justify-center">
                             <Image
                                 src={project.image || "/placeholder.svg"}
                                 alt={project.title}
-                                width={600}
+                                width={800}
                                 height={400}
                                 className="object-cover"
                             />

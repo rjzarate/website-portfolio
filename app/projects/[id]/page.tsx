@@ -15,6 +15,7 @@ import ResultsAndImpact from "@/components/projects/sections/results-and-impact"
 import ResultsAndContributions from "@/components/projects/sections/results-and-contributions";
 import Problem from "@/components/projects/sections/problem";
 import ProblemAndSolutions from "@/components/projects/sections/problem-and-solutions";
+import DemoVideo from "@/components/projects/sections/demo-video";
 
 export interface Project {
     id: string;
@@ -26,6 +27,7 @@ export interface Project {
     technologies: string[];
     demoUrl?: string;
     githubUrl?: string;
+    youtubeVideoId?: string;
     category: string;
     duration: string;
     startDate: string;
@@ -35,7 +37,7 @@ export interface Project {
     features: string[];
     featureDescriptions: string[];
     detailedDescription: string;
-    gallery: string[];
+    gallery?: string[];
     problemStatement?: string;
     solution?: string;
     solutions?: string[];
@@ -70,6 +72,10 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
         if (value === undefined) continue;
 
         switch (key) {
+            case "youtubeVideoId":
+                sections.push({ id: "demoVideo", label: "Demo Video" });
+                elements.push({ id: ++i, element: <DemoVideo /> });
+                break;
             case "problemStatement":
                 if (project["solution"] !== undefined) {
                     sections.push({ id: "problemSolution", label: "Problem & Solution" });
