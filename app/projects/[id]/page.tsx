@@ -16,6 +16,7 @@ import ResultsAndContributions from "@/components/projects/sections/results-and-
 import Problem from "@/components/projects/sections/problem";
 import ProblemAndSolutions from "@/components/projects/sections/problem-and-solutions";
 import DemoVideo from "@/components/projects/sections/demo-video";
+import ItchIo from "@/components/projects/sections/itch-io";
 
 export interface Project {
     id: string;
@@ -28,6 +29,12 @@ export interface Project {
     demoUrl?: string;
     githubUrl?: string;
     youtubeVideoId?: string;
+    itchIo?: {
+        title: string;
+        description: string;
+        embedUrl: string;
+        gameUrl: string;
+    };
     category: string;
     duration: string;
     startDate: string;
@@ -50,21 +57,9 @@ export interface Project {
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const project = projects.find((p) => p.id === use(params).id);
 
-    if (!project) {
-        notFound();
-    }
+    if (!project) notFound();
 
-    let sections = [
-        { id: "overview", label: "Overview" },
-        // { id: "problem", label: "Problem" },
-        // { id: "solution", label: "Solution" },
-        // { id: "problemSolution", label: "Problem & Solution" },
-        // { id: "features", label: "Features" },
-        // { id: "gallery", label: "Gallery" },
-        // { id: "resultsImpact", label: "Results & Impact" },
-        // { id: "resultsContributions", label: "Results & Contributions" },
-    ];
-
+    let sections = [{ id: "overview", label: "Overview" }];
     let elements = [{ id: 0, element: <Overview /> }];
 
     let i = 1;
@@ -75,6 +70,10 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             case "youtubeVideoId":
                 sections.push({ id: "demoVideo", label: "Demo Video" });
                 elements.push({ id: ++i, element: <DemoVideo /> });
+                break;
+            case "itchIo":
+                sections.push({ id: "itchIo", label: "Play the Game" });
+                elements.push({ id: ++i, element: <ItchIo /> });
                 break;
             case "problemStatement":
                 if (project["solution"] !== undefined) {
@@ -101,6 +100,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     sections.push({ id: "resultsContributions", label: "Results & Contributions" });
                     elements.push({ id: ++i, element: <ResultsAndContributions /> });
                 }
+
             default:
         }
     }
