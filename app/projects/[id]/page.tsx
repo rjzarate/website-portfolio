@@ -19,6 +19,7 @@ import ProblemAndSolutions from "@/components/projects/sections/problem-and-solu
 export interface Project {
     id: string;
     title: string;
+    ranking?: number;
     shortDescription: string;
     description: string;
     image: string;
@@ -27,6 +28,8 @@ export interface Project {
     githubUrl?: string;
     category: string;
     duration: string;
+    startDate: string;
+    endDate: string;
     teamSize: string;
     challenges: string[];
     features: string[];
