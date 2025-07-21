@@ -1,0 +1,66 @@
+/* <div className="flex flex-col min-h-[100dvh]"> */
+.main-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+/* <section id="overview" className="w-full py-12 md:py-24 lg:py-32"> */
+.page-section {
+    width: 100%;
+    padding-top: 3rem; /* 12 */
+    padding-bottom: 3rem; /* 12 */
+    @media (min-width: 768px) {
+        padding-top: 6rem; /* 24 */
+        padding-bottom: 6rem; /* 24 */
+    }
+    @media (min-width: 1024px) {
+        padding-top: 8rem; /* 32 */
+        padding-bottom: 8rem; /* 32 */
+    }
+}
+
+/* <div className="container px-4 md:px-6"> */
+.page-section .container {
+    padding-left: 1rem; /* 4 */
+    padding-right: 1rem; /* 4 */
+    @media (min-width: 768px) {
+        padding-left: 1.5rem; /* 6 */
+        padding-right: 1.5rem; /* 6 */
+    }
+}
+
+/* <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl"> */
+.page-section h2 {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: bold;
+    letter-spacing: -0.025em; /* tracking-tighter */
+    @media (min-width: 640px) {
+        font-size: 3rem; /* 5xl */
+    }
+}
+
+/* <section id="overview" className="w-full py-6 md:py-12 lg:py-18"> */
+.page-section1 {
+    width: 100%;
+    padding-top: 1.5rem; /* 6 */
+    padding-bottom: 1.5rem; /* 6 */
+    @media (min-width: 768px) {
+        padding-top: 3rem; /* 12 */
+        padding-bottom: 3rem; /* 12 */
+    }
+    @media (min-width: 1024px) {
+        padding-top: 4.5rem; /* 18 */
+        padding-bottom: 4.5rem; /* 18 */
+    }
+}
+
+/* <div className="container px-3 md:px-4.5"> */
+.page-section1 .container {
+    padding-left: 0.75rem; /* 3 */
+    padding-right: 0.75rem; /* 3 */
+    @media (min-width: 768px) {
+        padding-left: 1.125rem; /* 4.5 */
+        padding-right: 1.125rem; /* 4.5 */
+    }
+}

@@ -38,7 +38,7 @@ export default function Navbar() {
             <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600" />
             <div className="container mx-auto flex h-16 items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold ml-2">
-                    <span>{name}</span>
+                    <span>Froilan's Portfolio</span>
                 </Link>
 
                 {/* Mobile menu button */}
