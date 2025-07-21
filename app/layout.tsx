@@ -7,12 +7,13 @@ import Footer from "@/components/v0/footer";
 import { Toaster } from "@/components/v0/ui/toaster";
 
 import { name } from "@/lib/constants";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Froilan Jr — Portfolio",
-    description: `Hello! This me! I'm Froilan Danganan Zarate Jr, and this is my portfolio website. I am an aspiring software engineer with a passion for building projects! Feel free to check my website to view the projects worked on, my work experience and skills, and to know a bit more about me. Also, don't hesitate to contact me if you have a question or need assistance with your software 😊.
+    description: `Hello! This me! I'm Froilan Danganan Zarate Jr, and this is my portfolio website. I am an aspiring software engineer with a passion for building projects! Feel free to check my website to view the projects worked on, see my work experience and skills, or to know a bit more about me. Also, don't hesitate to contact me if you have a question or need assistance with your software 😊.
         
         GitHub: https://github.com/rjzarate
         LinkedIn: https://www.linkedin.com/in/froilan-zarate-jr-computer-scientist/
@@ -20,6 +21,12 @@ export const metadata = {
     openGraph: {
         images: "/img/profile2.png",
     },
+};
+
+export const _metadata = {
+    title: metadata.title,
+    description: metadata.description,
+    openGraph: metadata.openGraph,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

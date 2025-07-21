@@ -3,9 +3,14 @@ import SideNavigation from "@/components/v0/scroll-snap-sections";
 import Welcome from "@/components/home/welcome";
 import Projects from "@/components/home/projects";
 import Skills from "@/components/home/skills";
+import { _metadata } from "./layout";
 
 import "@/styles/portfolio.css";
 import "@/styles/pages/home.css";
+
+export const metadata = {
+    title: "Home | " + _metadata.title,
+};
 
 export default function Home() {
     const sections = [
