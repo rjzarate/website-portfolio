@@ -1,5 +1,3 @@
-"use client";
-
 import type React from "react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/v0/ui/card";
@@ -9,6 +7,11 @@ import { email, fullName, locations, phone } from "@/lib/constants";
 import "@/styles/portfolio.css";
 import Link from "next/link";
 import { Button } from "@/components/v0/ui/button";
+import { _metadata } from "../layout";
+
+export const metadata = {
+    title: "Contact | " + _metadata.title,
+};
 
 export default function ContactPage() {
     return (

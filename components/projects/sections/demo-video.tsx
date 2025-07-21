@@ -6,7 +6,7 @@ const DemoVideo = () => {
     const project = useProjectContext();
 
     return (
-        <section id="demo-video" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="demoVideo" className="w-full py-12 md:py-24 lg:py-32">
             <div className="container px-4 md:px-6">
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">

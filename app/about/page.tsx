@@ -8,6 +8,11 @@ import SideNavigation from "@/components/v0/scroll-snap-sections";
 import { images, name } from "@/lib/constants";
 
 import "@/styles/portfolio.css";
+import { _metadata } from "../layout";
+
+export const metadata = {
+    title: "About | " + _metadata.title,
+};
 
 const experience = [
     {

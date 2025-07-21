@@ -15,7 +15,7 @@ const ItchIo = () => {
     }
 
     return (
-        <section id="itch-io" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="itchIo" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
             <div className="container px-4 md:px-6">
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
