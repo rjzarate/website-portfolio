@@ -12,8 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Froilan Jr — Portfolio",
-    description:
-        "Hello! This me! I'm Froilan Danganan Zarate Jr, and this is my portfolio website. I am an aspiring software engineer with a passion for building projects! Feel free to check my website to view what I've worked on and don't hesitate to contact me if you have a question or need assistance with your software 😊.",
+    description: `Hello! This me! I'm Froilan Danganan Zarate Jr, and this is my portfolio website. I am an aspiring software engineer with a passion for building projects! Feel free to check my website to view the projects worked on, my work experience and skills, and to know a bit more about me. Also, don't hesitate to contact me if you have a question or need assistance with your software 😊.
+        
+        GitHub: https://github.com/rjzarate
+        LinkedIn: https://www.linkedin.com/in/froilan-zarate-jr-computer-scientist/
+        `,
     openGraph: {
         images: "/img/profile2.png",
     },
